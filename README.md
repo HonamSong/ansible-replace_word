@@ -23,11 +23,12 @@ Role Variables
 |Variable| Type| Required | Default | Comment |
 |---|---|---|---|---|
 |type         | str | no  | oneline | last keyword line change to 'oneline' or All loine keyword change to 'multiline'|
-|filename     | str | yes | NULL    | /path/to/file_name    |
-|regexp_word  | str | yes | NULL    | find keyword          |
-|replace_word | str | yes | NULL    | replace_word          |
-|is_backup    | bool| no  | True    | choice [true|false]   |
-|is_debug     | bool| no  | False   | choice [true|false]   |
+|filename     | str | yes | NULL    | /path/to/file_name                  |
+|regexp_word  | str | yes | NULL    | find keyword                        |
+|replace_word | str | yes | NULL    | replace_word                        |
+|is_sudo      | str | no  | yes     | choice [yes|no], yes is become yes  |
+|is_backup    | bool| no  | True    | choice [true|false]                 |
+|is_debug     | bool| no  | False   | choice [true|false]                 |
 
 
 Dependencies
