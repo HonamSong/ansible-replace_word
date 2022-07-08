@@ -2,8 +2,8 @@
 # defaults file for replace
 os_name: "{{ ansible_distribution }}"
 
-is_debug: False
-is_backup: True
+is_debug: false
+is_backup: true
 debug_value: "{{ ' - True' if is_debug else ' - False' }}"
 
 type: "oneline"

@@ -1,11 +1,8 @@
 ---
 # tasks file for replace
-
-#- name: Replace to "{{ type }} {{ '- Not define filename' if filename is not define }}"
 - include_tasks: file_exist_check.yml
   when: filename != 'NULL'
 
 - name: Replace to {{ type if filename != 'NULL' else '- Not define filename' }}
-  #include: "{{ role_path }}/tasks/{{ type }}.yml"
   include: "{{ type }}.yml"
   when: filename != 'NULL'

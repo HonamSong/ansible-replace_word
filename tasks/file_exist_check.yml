@@ -1,30 +1,14 @@
 ---
 # tasks file for replace
-
 - name: Check Replace file exist - {{ filename if filename != "NULL" else "filename is not define" }}
   become: "{{ is_sudo|default('yes')}}"
-  stat: 
+  stat:
     path: "{{ filename }}"
   register: file_exist_result
   when: filename != "NULL"
 
-- name: Debug{{ debug_value }}| File exist result 
+- name: Debug{{ debug_value }}| File exist result
   debug: var=file_exist_result
-  when: 
+  when:
     - is_debug
     - filename != "NULL"
-
-#- set_fact:
-#    backup_stat: "{{ true if is_backup else false }}"
-##  when:
-##    - is_backup | bool
-#
-#- name: Backup is {{ filename if backup_stat else false }}
-#  become: yes
-#  copy:
-#    src: "{{ filename }}"
-#    dest: "{{ filename }}_@{{ ansible_date_time.date }}_{{ ansible_date_time.time }}"
-#    remote_src: yes
-#  when:
-#    - filename != "NULL"
-#    - is_backup | bool
