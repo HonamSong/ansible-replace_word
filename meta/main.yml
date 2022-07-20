@@ -2,14 +2,14 @@
 galaxy_info:
   author: Honam Song
   description: Replace Text in file
-  company: iconloop
+  company:
   license: MIT
   min_ansible_version: 2.9
   platforms:
     - name: EL
       versions:
         - all
-    - name: AmazonLinux2
+    - name: Amazon
       versions:
         - all
     - name: Ubuntu

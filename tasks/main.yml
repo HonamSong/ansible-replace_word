@@ -1,8 +1,14 @@
 ---
 # tasks file for replace
-- include_tasks: file_exist_check.yml
-  when: filename != 'NULL'
 
-- name: Replace to {{ type if filename != 'NULL' else '- Not define filename' }}
-  include: "{{ type }}.yml"
-  when: filename != 'NULL'
+- name: Include) Replace to Text on file
+  include: "{{ item.type }}.yml"
+  vars:
+    type: "{{ item.type|default(omit) }}"
+    filename: "{{ item.filename|default('NULL') }}"
+    regexp_word: "{{ item.regexp_word }}"
+    replace_word: "{{ item.replace_word }}"
+    is_backup: "{{ item.is_backup|default(omit) }}"
+    is_debug: "{{ item.is_debug|default(false) }}"
+  loop: "{{ replace_info }}"
+  when: replace_info is defined

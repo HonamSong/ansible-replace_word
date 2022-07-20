@@ -1,6 +1,10 @@
 ---
 # tasks file for replace
-- name: Replace "{{ regexp_word }} -> {{ replace_word }}" on {{ filename if filename != 'NULL' else 'filename is not define' }}
+- name: Replace file exists check (type is {{ type }} )
+  include_tasks: file_exist_check.yml
+  when: filename != 'NULL'
+
+- name: "{{ type }} Replace \"{{ regexp_word }} -> {{ replace_word }}\" on {{ filename if filename != 'NULL' else 'filename is not define' }}"
   become: "{{ is_sudo|default('yes')}}"
   lineinfile:
     dest: "{{ filename }}"
