@@ -8,7 +8,7 @@
   when: filename != "NULL"
 
 - name: Noti | file state
-  debug: 
+  debug:
     msg: "Not found file is {{ filename }}"
   when: not file_exist_result.stat.exists
   failed_when: not file_exist_result.stat.exists
