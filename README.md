@@ -24,7 +24,7 @@ Role Variables
 Main variable : replace_info ( type is dict )
 
 
-- **Dict in Variables**
+- **variables in dict**
 
 |Variable| Type| Required | Default | Comment |
 |---|---|---|---|---|
