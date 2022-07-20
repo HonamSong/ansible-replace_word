@@ -7,6 +7,13 @@
   register: file_exist_result
   when: filename != "NULL"
 
+- name: Noti | file state
+  debug: 
+    msg: "Not found file is {{ filename }}"
+  when: not file_exist_result.stat.exists
+  failed_when: not file_exist_result.stat.exists
+  ignore_errors: true
+
 - name: Debug{{ debug_value }}| File exist result
   debug: var=file_exist_result
   when:
