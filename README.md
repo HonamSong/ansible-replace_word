@@ -24,7 +24,7 @@ Role Variables
 Main variable : replace_info ( type is dict )
 
 
-### dict in variables
+- **Dict in Variables**
 
 |Variable| Type| Required | Default | Comment |
 |---|---|---|---|---|
@@ -46,9 +46,11 @@ Example Playbook
 ----------------
 Here are some examples of how to use the role.
 
-#### The "oneline" type changes the <u>**"last line"**</u> of matching text.
-#### The "multiline" type changes the **<u><span style="color:orange">"ALL line"</span></u>** of matching text.
+* The **"oneline"** type changes the **<u>"last line"</u>** of matching text.
+* The **"multiline"** type changes the **<u>"ALL line"</u>** of matching text.
 
+<cr> </cr>
+<cr> </cr>
 
     - hosts: servers
       roles:
@@ -75,7 +77,7 @@ or
                 is_backup: false
                 is_debug: true
                 is_sudo: true
-                
+
 
 
 
