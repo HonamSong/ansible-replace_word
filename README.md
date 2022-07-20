@@ -44,10 +44,6 @@ None.
 
 Example Playbook
 ----------------
-```
-
-```
-
 Here are some examples of how to use the role.
 
 #### The "oneline" type changes the <u>**"last line"**</u> of matching text.
