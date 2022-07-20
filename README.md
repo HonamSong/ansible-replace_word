@@ -23,8 +23,8 @@ Role Variables
 
 Main variable : replace_info ( type is dict )
 
-### dict in variables
 
+### dict in variables
 
 |Variable| Type| Required | Default | Comment |
 |---|---|---|---|---|
@@ -44,8 +44,15 @@ None.
 
 Example Playbook
 ----------------
+```
+
+```
 
 Here are some examples of how to use the role.
+
+#### The "oneline" type changes the <u>**"last line"**</u> of matching text.
+#### The "multiline" type changes the **<u><span style="color:orange">"ALL line"</span></u>** of matching text.
+
 
     - hosts: servers
       roles:
@@ -53,6 +60,7 @@ Here are some examples of how to use the role.
            replace_info:
              - { "type": "oneline", "filename": "/root/sshd_config", "regexp_word": '^test_conf.*d$', "replace_word": "test_after abcd", "is_backup": false}
              - { "type": "multiline", "filename": "/root/sshd_config2", "regexp_word": '^test_conf.*d$', "replace_word": "test_after abcd", "is_backup": true}
+
 or
 
     - hosts: servers
@@ -70,6 +78,8 @@ or
                 replace_word: "test_after abcd"
                 is_backup: false
                 is_debug: true
+                is_sudo: true
+                
 
 
 
