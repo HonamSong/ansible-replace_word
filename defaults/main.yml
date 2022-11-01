@@ -4,7 +4,7 @@ os_name: "{{ ansible_distribution }}"
 
 is_debug: false
 is_backup: true
-debug_value: "{{ ' - True' if is_debug else ' - False' }}"
+debug_value: "{{ '- True' if is_debug else '- False' }}"
 
 type: "oneline"
 filename: "NULL"
